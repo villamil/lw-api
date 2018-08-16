@@ -1,0 +1,7 @@
+{
+  "rules": {
+    "no-unsafe-any": true,
+    "interface-name": false
+  },
+  "extends": "gts/tslint.json"
+}

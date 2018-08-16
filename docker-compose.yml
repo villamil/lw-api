@@ -1,0 +1,11 @@
+version: "3.3"
+services:
+  lw-database:
+    image: 'mysql:5.6'
+    environment:
+    - MYSQL_ROOT_PASSWORD=pwd123
+    - MYSQL_DATABASE=lw-test
+    - MYSQL_USER=lw-user
+    - MYSQL_PASSWORD=lw123
+    ports:
+    - "3306:3306"

@@ -1,0 +1,16 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch server",
+      "program": "${workspaceFolder}/build/src/index.js",
+      "preLaunchTask": "build",
+      "envFile": "${workspaceFolder}/.env",
+      "outFiles": ["${workspaceFolder}/build/src/**/*.js"],
+      "outputCapture": "std",
+      "sourceMaps": true
+    }
+  ]
+}

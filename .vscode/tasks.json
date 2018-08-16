@@ -1,0 +1,30 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "identifier": "copy_html",
+      "type": "npm",
+      "script": "html"
+    },
+    {
+      "identifier": "build_typescript",
+      "type": "typescript",
+      "tsconfig": "tsconfig.json",
+      "problemMatcher": [
+          "$tsc"
+      ],
+      "group": {
+          "kind": "build",
+          "isDefault": true
+      }
+    },
+    {
+      "label": "build",
+      "identifier": "build",
+        "dependsOn": [
+            "copy_html",
+            "build_typescript"
+        ]
+    }
+  ]
+}

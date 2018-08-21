@@ -12,7 +12,8 @@ import * as fs from 'fs';
 
 import { CONFIG } from './config';
 import { connectDb } from './util/db';
-// import { routes } from './routes/routes';
+import userRouter  from './routes/user.routes';
+import flatsRouter from './routes/flat.routes';
 // import { UserService } from './services/user.service';
 // import { AuthenticationService } from './services/authentication.service';
 // import { RedisClient } from './util/redis';
@@ -141,6 +142,10 @@ export class Server {
       //   this.app.use(route.path, route.middleware, route.handler);
       // }
       // logger.debug('Loaded routes...');
+
+      this.app.use('/users', userRouter);
+      this.app.use('/flats', flatsRouter);
+      logger.debug('Loaded routes...');
 
       return this.server;
     } catch(error) {

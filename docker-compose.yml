@@ -1,6 +1,6 @@
 version: "3.3"
 services:
-  lw-database:
+  db:
     image: 'mysql:5.6'
     environment:
     - MYSQL_ROOT_PASSWORD=pwd123
@@ -9,3 +9,15 @@ services:
     - MYSQL_PASSWORD=lw123
     ports:
     - "3306:3306"
+
+  api:
+    build: .
+    ports:
+    - "3000:3000"
+    links:
+      - "db:database"
+    depends_on:
+      - "db"
+    environment:
+       DB_HOST: db
+  
